@@ -1,0 +1,19 @@
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>
+  <label>Search</label>
+  <input type="text" #searchBox>
+
+  <button (click)="logSelected()">Selected List</button>
+  <ul class="reddit">
+    <li *ngFor="let post of redditData">
+         
+        <span class="badge"><input type="checkbox" [(ngModel)]="post.selected"></span> {{post.data.title}}
+      
+    </li>
+  </ul>
+
